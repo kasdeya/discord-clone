@@ -20,6 +20,7 @@ export async function PATCH(
     const server = await db.server.update({
       where: {
         id: params.serverId,
+        // Can't leave if server creator
         profileId: {
           not: profile.id,
         },
